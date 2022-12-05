@@ -1,0 +1,113 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="mic512.png" >
+  <style>
+    body {
+      background-color: #333333;
+      text-align: center;
+      font-family: source code pro, monospace;
+    }
+
+    #textBox {
+      /* border: 4px solid #9a9a9a;
+      border-radius: 8px; */
+      display: flex;
+      align-items: center;      /* vertical */
+      justify-content: center;  /* horizontal */
+      padding: 20px;
+      min-height: 100px;
+      color: #9a9a9a;
+      margin: 20px;
+    }
+
+    #toggleBut {
+      min-width: 150px;
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: source code pro, monospace;
+      line-height: 1.42857143;
+      text-align: center;
+      vertical-align: middle;
+      touch-action: manipulation;
+      user-select: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      color: #fff;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+    }
+  </style>
+</head>
+<body>
+  <BR/>
+  <div id='textBox'>recognizing... </div>
+  <input id="toggleBut" type="button" value="recognize"/>
+</body>
+</html>
+
+<script type="text/javascript">
+
+if (!('webkitSpeechRecognition' in window)) {  
+  textBox.innerText = "API not supported, use Chrome 25+"
+  throw new Error()
+}
+
+textBox = document.getElementById("textBox")
+toggleBut = document.getElementById("toggleBut")
+toggleBut.onclick = recognize
+recognizing = false
+
+recog = new webkitSpeechRecognition()
+recog.continuous = true
+recog.interimResults = true
+recog.lang = "yue-Hant-HK"
+
+function recognize() {
+  if (recognizing) { 
+    recog.stop()
+  } else {
+    textBox.innerHTML = ''
+    recog.start()
+  }
+}
+
+recog.onstart = () => {
+  textBox.innerHTML = ""
+  recognizing = true
+  toggleBut.value = "stop"
+  textBox.style.color = '#9a9a9a'
+  textBox.innerText = "recognizing..."
+}
+
+recog.onend = () => {
+  recognizing = false
+  toggleBut.value = "start"
+}
+
+recog.onresult = e => {
+  i = e.resultIndex
+  r = e.results[i]
+  j = r.length - 1
+  txt = r[j].transcript
+  textBox.style.color = '#9a9a9a'
+  textBox.innerHTML = txt
+  if (r.isFinal) {
+    navigator.clipboard.writeText(txt)
+    textBox.style.color = 'white'
+  }
+}
+
+document
+  .getElementsByTagName('body')[0]
+  .oncopy = () => navigator.clipboard.writeText(textBox.innerText)
+
+document.onkeyup = e => {
+  if (e.keyCode == 32) { recognize() }
+}
+
+window.onload = () => recognize()
+
+</script>   
