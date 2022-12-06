@@ -18,4 +18,4 @@ All supported languages of Google Speech API can be found [here](https://stackov
 
 ## Need Help?
 
-Open a [github issue](https://github.com/hoishing/voice-recog/issues) or ping me on [Twitter](https://twitter.com/hoishing)
+Open a [github issue](https://github.com/hoishing/voice-recog/issues) or ping me on [Twitter](https://twitter.com/hoishing) ![](https://api.iconify.design/logos/twitter.svg?width=20)
