@@ -46,7 +46,7 @@ const alertStr = `Caution: microphone permission required.
 Please click on the red cross in address bar to allow it.`;
 const recognizingStr = 'recognizing...';
 
-localStorage.getItem('lang') || localStorage.setItem('lang', 'yue-Hant-HK');
+localStorage.getItem('lang') || localStorage.setItem('lang', 'en-US');
 
 let textBox = document.getElementById('textBox');
 
