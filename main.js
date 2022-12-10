@@ -42,6 +42,9 @@ let langs = [
 ];
 
 const colorDim = '#9a9a9a';
+const alertStr = `Caution: microphone permission required.
+Please click on the red cross in address bar to allow it.`;
+const recognizingStr = 'recognizing...';
 
 localStorage.getItem('lang') || localStorage.setItem('lang', 'yue-Hant-HK');
 
@@ -53,14 +56,26 @@ if (!('webkitSpeechRecognition' in window)) {
 }
 
 let langSelect = document.getElementById('lang-select');
+langSelect.onchange = changeLang;
 let toggleBut = document.getElementById('toggleBut');
-toggleBut.onclick = recognize;
+toggleBut.onclick = detect_mic_and_recognize;
+let loadingIcon = document.getElementById('loading-icon');
+loadingIcon.hidden = true;
 let recognizing = false;
 
 let recog = new webkitSpeechRecognition();
 recog.continuous = true;
 recog.interimResults = true;
 recog.lang = localStorage.getItem('lang');
+
+function detect_mic_and_recognize() {
+  navigator.mediaDevices
+    .getUserMedia({ audio: true })
+    .then(recognize)
+    .catch(() => {
+      alert(alertStr);
+    });
+}
 
 function recognize() {
   if (recognizing) {
@@ -71,19 +86,29 @@ function recognize() {
   }
 }
 
+function changeLang(e) {
+  let lang = e.target.value;
+  localStorage.setItem('lang', lang);
+  recog.lang = lang;
+}
+
 recog.onstart = () => {
   textBox.innerHTML = '';
   recognizing = true;
   toggleBut.value = 'stop';
   textBox.style.color = colorDim;
-  textBox.innerText = 'recognizing...';
+  textBox.innerText = recognizingStr;
+  loadingIcon.hidden = false;
 };
 
 recog.onend = () => {
   recognizing = false;
   toggleBut.value = 'start';
-  textBox.style.color = colorDim;
-  textBox.innerText = 'idle';
+  loadingIcon.hidden = true;
+  if (textBox.innerText == recognizingStr) {
+    textBox.style.color = colorDim;
+    textBox.innerText = 'idle';
+  }
 };
 
 recog.onresult = (e) => {

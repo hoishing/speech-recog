@@ -22,7 +22,14 @@
   </head>
   <body class="bg-#333333 flex flex-col items-center font-mono">
     <br />
-    <div id="textBox" m-3rem>recognizing...</div>
+    <div m-3rem>
+      <img
+        id="loading-icon"
+        src="https://api.iconify.design/line-md/loading-twotone-loop.svg?color=%23d8dee9&width=20"
+        align-bottom
+      />
+      <span id="textBox">recognizing...</span>
+    </div>
     <input
       id="toggleBut"
       type="button"
@@ -40,7 +47,6 @@
     <div id="lang_blk" x-data="{langs}">
       <select
         id="lang-select"
-        @change="localStorage.setItem('lang', $event.target.value)"
         class="p-1.5"
         rounded-lg
         bg-stone-700

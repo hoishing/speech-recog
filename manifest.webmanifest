@@ -1,5 +1,6 @@
 {
   "name": "Voice Recognition",
+  "short_name": "Recog",
   "description": "voice recognition webapp powered by Google's Web Speech API",
   "icons": [
     { "src": "img/mic512.png", "type": "image/png", "sizes": "512x512" },
