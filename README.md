@@ -1,8 +1,8 @@
-# Simple Voice Recognition
+# Speech Recognition
 
-[![GitHub](https://img.shields.io/github/license/hoishing/voice-recog)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/github/license/hoishing/speech-recog)](https://opensource.org/licenses/MIT)
 
-> free, accurate and unlimited voice recognition webapp powered by Google's Web Speech API
+> free, accurate and unlimited speech recognition web app powered by Google's Web Speech API
 
 [🚀 launch app][launch]
 
@@ -17,8 +17,7 @@ Now, in 2022, the built-in voice recognition for both OS are mature enough that 
 ## Features
 
 - auto copy recognition results to clipboard
-- auto stop recognition after speech
-- multilingual support
+- multilingual
 - hotkey: space bar to toggle start / stop recognition
 - [PWA][pwa]: installable on desktop / mobile like native app
 
@@ -43,11 +42,11 @@ It uses Google's `webkitSpeechRecognition` api so it only works on Chrome OS / b
 
 ## Need Help?
 
-Open a [github issue](https://github.com/hoishing/voice-recog/issues) or ping me on [Twitter](https://twitter.com/hoishing) ![](https://api.iconify.design/logos/twitter.svg?width=20)
+Open a [github issue](https://github.com/hoishing/speech-recog/issues) or ping me on [Twitter](https://twitter.com/hoishing) ![](https://api.iconify.design/logos/twitter.svg?width=20)
 
 [pwa]: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps
 [uno]: https://github.com/unocss/unocss
 [tailwind]: https://tailwindcss.com
 [alpine]: https://alpinejs.dev
-[source]: https://github.com/hoishing/voice-recog
-[launch]: https://hoishing.github.io/voice-recog
+[source]: https://github.com/hoishing/speech-recog
+[launch]: https://hoishing.github.io/speech-recog
