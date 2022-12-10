@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="shortcut icon" href="img/mic.svg" type="image/svg+xml" />
+    <script>
+      window.__unocss = {
+        theme: {
+          fontFamily: {
+            mono: ['source code pro', 'monospace'],
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js"></script>
+    <script src="main.js" defer></script>
+    <script
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="post-alpine.js" defer></script>
+  </head>
+  <body class="bg-#333333 flex flex-col items-center font-mono">
+    <br />
+    <div id="textBox" m-3rem>recognizing...</div>
+    <input
+      id="toggleBut"
+      type="button"
+      value="recognize"
+      border="solid 1px transparent"
+      inline-block
+      py-2
+      min-w-12rem
+      bg-sky-600
+      text-white
+      rounded-md
+      font-mono
+    />
+    <div class="text-#535353 text-sm m-1.5">shortcut: space bar</div>
+    <div id="lang_blk" x-data="{langs}">
+      <select
+        id="lang-select"
+        @change="localStorage.setItem('lang', $event.target.value)"
+        class="p-1.5"
+        rounded-lg
+        bg-stone-700
+        text-stone-300
+        m-3rem
+      >
+        <template x-for="[lang, langID] in langs">
+          <option x-bind:value="langID" x-text="lang"></option>
+        </template>
+      </select>
+    </div>
+  </body>
+</html>

@@ -2,20 +2,49 @@
 
 [![GitHub](https://img.shields.io/github/license/hoishing/voice-recog)](https://opensource.org/licenses/MIT)
 
-Simple voice recognition web app harnessing Google Speech API, for Chrome browser / OS only.
+> free, accurate and unlimited voice recognition webapp powered by Google's Web Speech API
 
-## Changing Language
+## Motivation
 
-The app default using Cantonese, you may change it by searching the line `recog.lang = "yue-Hant-HK"` and change it to other languages.
+In around 2016, the built-in voice recognition support for Cantonese in both Windows and macOS were not available yet. Even for Mandarin, the quality of recognition in both OS were far below Google. So I created this little webapp, harnessing Google web speech API, to serve my daily voice recognition need.
 
-All supported languages of Google Speech API can be found [here](https://stackoverflow.com/a/23733589/264382)
+To speed up the operation, I added auto copy to clipboard and shortcut key feature afterwards. It then became a handy always-on utility on my computer.
+
+Now, in 2022, the built-in voice recognition for both OS are mature enough that I can rely on them over 90% of time. However, the recognition quality of Google is still much better, especially in Cantonese. So I still come back to this tool when the OS fail to recognize those less common phases or slang.
+
+## Features
+
+- auto copy recognition results to clipboard
+- auto stop recognition after speech
+- multilingual support
+- hotkey: space bar to toggle start / stop recognition
+- [PWA][pwa]: installable on desktop / mobile like native app
 
 ## Usage
 
-- allow the app to use mic and clipboard in Chrome
-- space bar: start / stop recognition
+- grant microphone and clipboard permission in Chrome
+- space bar: toggle start / stop recognition
 - recognition results will be displayed and copied to the clipboard
+
+## Tech Details
+
+🔗 [source code][source]
+
+It started with a single HTML file with internal css and javascript. As the project evolve I want to keep it simple and don't want to mess with bundler. This lead to the following tech stack selection:
+
+- [UnoCSS][uno]: small, fast and flexible [tailwindcss][tailwind] alternative that support CDN
+- [Alpine.js][alpine]: lightweight javaScript framework with CDN
+
+### limitation
+
+It uses Google's `webkitSpeechRecognition` api so it only works on Chrome OS / browser.
 
 ## Need Help?
 
 Open a [github issue](https://github.com/hoishing/voice-recog/issues) or ping me on [Twitter](https://twitter.com/hoishing) ![](https://api.iconify.design/logos/twitter.svg?width=20)
+
+[pwa]: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps
+[uno]: https://github.com/unocss/unocss
+[tailwind]: https://tailwindcss.com
+[alpine]: https://alpinejs.dev
+[source]: https://github.com/hoishing/voice-recog

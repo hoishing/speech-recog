@@ -1,0 +1,20 @@
+{
+  "name": "Voice Recognition",
+  "short_name": "Recog",
+  "description": "voice recognition webapp powered by Google's Web Speech API",
+  "icons": [
+    { "src": "img/mic512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "img/mic256.png", "type": "image/png", "sizes": "256x256" },
+    { "src": "img/mic128.png", "type": "image/png", "sizes": "128x128" },
+    { "src": "img/mic64.png", "type": "image/png", "sizes": "64x64" }
+  ],
+  "id": "index.html",
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#323233",
+  "background_color": "#323233",
+  "scope": ".",
+  "orientation": "portrait-primary",
+  "dir": "ltr",
+  "lang": "en"
+}
