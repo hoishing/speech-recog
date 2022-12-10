@@ -8,13 +8,13 @@
     { "src": "img/mic128.png", "type": "image/png", "sizes": "128x128" },
     { "src": "img/mic64.png", "type": "image/png", "sizes": "64x64" }
   ],
-  "id": "index.html",
-  "start_url": "index.html",
+  "id": "/index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "theme_color": "#323233",
   "background_color": "#323233",
   "orientation": "portrait-primary",
-  "scope": "https://hoishing.github.io/speech-recog/",
+  "scope": "/",
   "dir": "ltr",
   "lang": "en"
 }
