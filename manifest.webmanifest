@@ -14,7 +14,7 @@
   "theme_color": "#323233",
   "background_color": "#323233",
   "orientation": "portrait-primary",
-  "scope": "https://hoishing.github.io/voice-recog/",
+  "scope": "https://hoishing.github.io/speech-recog/",
   "dir": "ltr",
   "lang": "en"
 }
