@@ -4,6 +4,8 @@
 
 > free, accurate and unlimited voice recognition webapp powered by Google's Web Speech API
 
+[🚀 launch app][launch]
+
 ## Motivation
 
 In around 2016, the built-in voice recognition support for Cantonese in both Windows and macOS were not available yet. Even for Mandarin, the quality of recognition in both OS were far below Google. So I created this little webapp, harnessing Google web speech API, to serve my daily voice recognition need.
@@ -48,3 +50,4 @@ Open a [github issue](https://github.com/hoishing/voice-recog/issues) or ping me
 [tailwind]: https://tailwindcss.com
 [alpine]: https://alpinejs.dev
 [source]: https://github.com/hoishing/voice-recog
+[launch]: https://hoishing.github.io/voice-recog

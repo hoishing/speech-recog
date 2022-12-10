@@ -13,7 +13,6 @@
   "display": "standalone",
   "theme_color": "#323233",
   "background_color": "#323233",
-  "scope": ".",
   "orientation": "portrait-primary",
   "dir": "ltr",
   "lang": "en"
