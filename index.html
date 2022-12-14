@@ -13,6 +13,7 @@
       };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js"></script>
+    <script src="ua-parser.min.js" defer></script>
     <script src="main.js" defer></script>
     <script
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
@@ -43,8 +44,10 @@
       rounded-md
       font-mono
     />
-    <div class="text-#535353 text-sm m-1.5">shortcut: space bar</div>
-    <div id="lang_blk" x-data="{langs}">
+    <div id="shortcut-label" class="text-#535353 text-sm m-1.5">
+      shortcut: space bar
+    </div>
+    <div id="lang-div" x-data="{langs}">
       <select
         id="lang-select"
         class="p-1.5"

@@ -1,3 +1,24 @@
+const textBox = document.getElementById('textBox');
+const errMsg = 'Sorry.. Google Speech API is only supported by Chrome';
+const parser = new UAParser();
+
+// check browser support
+if (parser.getBrowser().name != 'Chrome') {
+  alert('Incompatible Browser...');
+  for (const cssID of [
+    'loading-icon',
+    'lang-div',
+    'shortcut-label',
+    'toggleBut',
+  ]) {
+    document.getElementById(cssID).style.visibility = 'hidden';
+  }
+  setTimeout(() => {
+    textBox.innerText = errMsg;
+    textBox.style.color = 'white';
+  }, 1000);
+}
+
 // PWA
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').then(() => {});
@@ -45,23 +66,16 @@ const langs = [
 const colorDim = '#9a9a9a';
 const alertStr = `Caution: microphone permission required.
 Please click on the red cross in address bar to allow it.`;
-const speechErrMsg = 'Speech recognition not supported, require Chrome 25+';
 const recognizingStr = 'recognizing...';
 
 localStorage.getItem('lang') || localStorage.setItem('lang', 'en-US');
 
-const textBox = document.getElementById('textBox');
-
-if (!('webkitSpeechRecognition' in window)) {
-  textBox.innerText = speechErrMsg;
-  throw new Error();
-}
-
 const langSelect = document.getElementById('lang-select');
-langSelect.onchange = changeLang;
 const toggleBut = document.getElementById('toggleBut');
-toggleBut.onclick = detect_mic_and_recognize;
 const loadingIcon = document.getElementById('loading-icon');
+
+langSelect.onchange = changeLang;
+toggleBut.onclick = detect_mic_and_recognize;
 loadingIcon.hidden = true;
 let recognizing = false;
 
@@ -90,11 +104,14 @@ function recognize() {
 
 function changeLang(e) {
   let lang = e.target.value;
+  e.target.blur();
+  recognizing && recog.stop();
   localStorage.setItem('lang', lang);
   recog.lang = lang;
 }
 
 recog.onstart = () => {
+  // console.log('on start');
   textBox.innerHTML = '';
   recognizing = true;
   toggleBut.value = 'stop';
@@ -104,6 +121,7 @@ recog.onstart = () => {
 };
 
 recog.onend = () => {
+  // console.log('on end');
   recognizing = false;
   toggleBut.value = 'start';
   loadingIcon.hidden = true;

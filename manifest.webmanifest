@@ -15,5 +15,13 @@
   "background_color": "#323233",
   "orientation": "portrait-primary",
   "dir": "ltr",
-  "lang": "en"
+  "lang": "en",
+  "screenshots": [
+    {
+      "src": "https://i.imgur.com/WB76vDS.png",
+      "type": "image/png",
+      "sizes": "790x425",
+      "form_factor": "wide"
+    }
+  ]
 }

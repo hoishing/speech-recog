@@ -2,6 +2,8 @@
 
 [![GitHub](https://img.shields.io/github/license/hoishing/speech-recog)](https://opensource.org/licenses/MIT)
 
+<p><img src="https://i.imgur.com/WB76vDS.png" width='600'/></p>
+
 > free, accurate and unlimited speech recognition web app powered by Google's Web Speech API
 
 [🚀 launch app][launch]
@@ -15,6 +17,8 @@ To speed up the operation, I added auto copy to clipboard and shortcut key featu
 Now, in 2022, the built-in voice recognition for both OS are mature enough that I can rely on them over 90% of time. However, the recognition quality of Google is still much better, especially in Cantonese. So I still come back to this tool when the OS fail to recognize those less common phases or slang.
 
 ## Features
+
+demo 🎬 https://youtu.be/D2NwsPozwFw
 
 - auto copy recognition results to clipboard
 - multilingual
