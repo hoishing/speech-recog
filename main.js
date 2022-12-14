@@ -13,6 +13,7 @@ const langs = [
   ['English(UK)', 'en-GB'],
   ['English(US)', 'en-US'],
   ['Español', 'es-ES'],
+  ['Ελληνικά', 'el-GR'],
   ['Euskara', 'eu-ES'],
   ['Français', 'fr-FR'],
   ['Galego', 'gl-ES'],
@@ -34,11 +35,11 @@ const langs = [
   ['Pусский', 'ru-RU'],
   ['Српски', 'sr-RS'],
   ['한국어', 'ko-KR'],
-  ['普通话', 'cmn-Hans-CN'],
+  ['日本語', 'ja-JP'],
   ['中文 (台灣)', 'cmn-Hant-TW'],
   ['粵語 (香港)', 'yue-Hant-HK'],
-  ['日本語', 'ja-JP'],
-  ['latīna', 'la'],
+  ['普通话', 'cmn-Hans-CN'],
+  ['العربية', 'ar-SA'],
 ];
 
 const colorDim = '#9a9a9a';
