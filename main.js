@@ -44,6 +44,7 @@ let langs = [
 const colorDim = '#9a9a9a';
 const alertStr = `Caution: microphone permission required.
 Please click on the red cross in address bar to allow it.`;
+const speechErrMsg = 'Speech recognition not supported, require Chrome 25+';
 const recognizingStr = 'recognizing...';
 
 localStorage.getItem('lang') || localStorage.setItem('lang', 'en-US');
@@ -51,7 +52,7 @@ localStorage.getItem('lang') || localStorage.setItem('lang', 'en-US');
 let textBox = document.getElementById('textBox');
 
 if (!('webkitSpeechRecognition' in window)) {
-  textBox.innerText = 'Speech API not supported, need Chrome 25+';
+  textBox.innerText = speechErrMsg;
   throw new Error();
 }
 
