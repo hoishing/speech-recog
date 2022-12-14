@@ -3,7 +3,7 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').then(() => {});
 }
 
-let langs = [
+const langs = [
   ['Afrikaans', 'af-ZA'],
   ['Bahasa Indonesia', 'id-ID'],
   ['Bahasa Melayu', 'ms-MY'],
@@ -49,22 +49,22 @@ const recognizingStr = 'recognizing...';
 
 localStorage.getItem('lang') || localStorage.setItem('lang', 'en-US');
 
-let textBox = document.getElementById('textBox');
+const textBox = document.getElementById('textBox');
 
 if (!('webkitSpeechRecognition' in window)) {
   textBox.innerText = speechErrMsg;
   throw new Error();
 }
 
-let langSelect = document.getElementById('lang-select');
+const langSelect = document.getElementById('lang-select');
 langSelect.onchange = changeLang;
-let toggleBut = document.getElementById('toggleBut');
+const toggleBut = document.getElementById('toggleBut');
 toggleBut.onclick = detect_mic_and_recognize;
-let loadingIcon = document.getElementById('loading-icon');
+const loadingIcon = document.getElementById('loading-icon');
 loadingIcon.hidden = true;
 let recognizing = false;
 
-let recog = new webkitSpeechRecognition();
+const recog = new webkitSpeechRecognition();
 recog.continuous = true;
 recog.interimResults = true;
 recog.lang = localStorage.getItem('lang');
