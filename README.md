@@ -1,12 +1,17 @@
 # Speech Recognition
 
-[![GitHub](https://img.shields.io/github/license/hoishing/speech-recog)](https://opensource.org/licenses/MIT)
+![chrome-only] [![alpine-badge]][alpine] [![uno-badge]][uno] ![mit]
 
 <p><img src="https://i.imgur.com/WB76vDS.png" width='600'/></p>
 
 > free, accurate and unlimited speech recognition web app powered by Google's Web Speech API
 
 [🚀 launch app][launch]
+
+[mit]: https://img.shields.io/github/license/hoishing/speech-recog
+[uno-badge]: https://img.shields.io/badge/css-UnoCSS-blue
+[alpine-badge]: https://img.shields.io/badge/front--end-Alpine.js-success
+[chrome-only]: https://img.shields.io/badge/browser-chrome%20only-red
 
 ## Motivation
 
@@ -40,7 +45,7 @@ It started with a single HTML file with internal css and javascript. As the proj
 - [UnoCSS][uno]: small, fast and flexible [tailwindcss][tailwind] alternative that support CDN
 - [Alpine.js][alpine]: lightweight javaScript framework with CDN
 
-### limitation
+### Platform
 
 It uses Google's `webkitSpeechRecognition` api so it only works on Chrome OS / browser.
 
